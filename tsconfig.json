@@ -1,6 +1,7 @@
 {
   "extends": "@tsconfig/next/tsconfig.json",
   "compilerOptions": {
+    "jsx": "preserve",
     "target": "es6",
     "plugins": [
       {
