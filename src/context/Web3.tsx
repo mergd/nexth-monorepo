@@ -1,34 +1,29 @@
 'use client'
 
-import { configureChains, WagmiConfig } from 'wagmi'
-import { publicProvider } from 'wagmi/providers/public'
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/utils/site'
-import { PropsWithChildren, useEffect, useState } from 'react'
-import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/react'
-import { ETH_CHAINS } from '@/utils/network'
+import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { PropsWithChildren } from 'react'
+import { State, WagmiProvider } from 'wagmi'
+import { WALLETCONNECT_CONFIG, WALLETCONNECT_PROJECT_ID } from '@/utils/web3'
 
-const projectId = process.env.NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID ?? ''
-if (!projectId) {
-  console.warn('You need to provide a NEXT_PUBLIC_WALLETCONNECT_PROJECT_ID env variable')
+interface Props extends PropsWithChildren {
+  initialState?: State
 }
-const { chains } = configureChains(ETH_CHAINS, [publicProvider()])
 
-const metadata = {
-  name: SITE_NAME,
-  description: SITE_DESCRIPTION,
-  url: SITE_URL,
-  icons: [],
-}
-const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+const queryClient = new QueryClient()
 
-createWeb3Modal({ wagmiConfig, projectId, chains })
+createWeb3Modal({
+  wagmiConfig: WALLETCONNECT_CONFIG,
+  projectId: WALLETCONNECT_PROJECT_ID,
+  enableAnalytics: false, // Optional - defaults to your Cloud configuration
+})
 
-export function Web3Provider(props: PropsWithChildren) {
-  const [ready, setReady] = useState(false)
-
-  useEffect(() => {
-    setReady(true)
-  }, [])
-
-  return <>{ready && <WagmiConfig config={wagmiConfig}>{props.children}</WagmiConfig>}</>
+export function Web3Provider(props: Props) {
+  return (
+    <>
+      <WagmiProvider config={WALLETCONNECT_CONFIG} initialState={props.initialState}>
+        <QueryClientProvider client={queryClient}>{props.children}</QueryClientProvider>
+      </WagmiProvider>
+    </>
+  )
 }
