@@ -23,10 +23,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
 
 # local env files
-.env
 .env*.local
 
 # vercel
@@ -37,24 +35,19 @@ yarn-error.log*
 next-env.d.ts
 
 # hardhat
-**/hardhat/node_modules
-**/hardhat/.env
-**/hardhat/coverage
-**/hardhat/coverage.json
-**/hardhat/typechain
-**/hardhat/typechain-types
-**/hardhat/cache
-**/hardhat/artifacts
+contracts/node_modules
+contracts/.env
+contracts/coverage
+contracts/coverage.json
+contracts/typechain
+contracts/typechain-types
 
-# forge
-**/foundry/cache/
-**/foundry/out/
-**/foundry/.env
-
+contracts/cache
+contracts/artifacts
 
 # wagmi recommends to ignore their generated file
 # /src/abis.ts 
 
 # subgraph
-**/subgraph/node_modules
-**/subgraph/build
+subgraph/node_modules
+subgraph/build
