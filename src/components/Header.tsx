@@ -2,7 +2,6 @@ import React from 'react'
 import { LinkComponent } from './LinkComponent'
 import { SITE_EMOJI } from '@/utils/site'
 import { Connect } from './Connect'
-import { NotificationsDrawer } from './NotificationsDrawer'
 
 export function Header() {
   return (
@@ -13,7 +12,6 @@ export function Header() {
 
       <div className='flex gap-2'>
         <Connect />
-        <NotificationsDrawer />
       </div>
     </header>
   )
