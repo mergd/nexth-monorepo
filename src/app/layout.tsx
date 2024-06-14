@@ -8,6 +8,7 @@ import { cookieToInitialState } from 'wagmi'
 import { WALLETCONNECT_CONFIG } from '@/utils/web3'
 import { headers } from 'next/headers'
 import '../assets/globals.css'
+import { Toaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
   applicationName: SITE_NAME,
@@ -64,6 +65,7 @@ export default function RootLayout(props: PropsWithChildren) {
         <Web3Provider initialState={initialState}>
           <Layout>{props.children}</Layout>
         </Web3Provider>
+        <Toaster />
       </body>
     </html>
   )
