@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function LinkComponent(props: Props) {
-  const className = props.className ?? ''
+  const className = props.className ?? ' '
   const isExternal = props.href.match(/^([a-z0-9]*:|.{0})\/\/.*$/) || props.isExternal
 
   if (isExternal) {
@@ -21,7 +21,7 @@ export function LinkComponent(props: Props) {
   }
 
   return (
-    <Link className={className} href={props.href}>
+    <Link className={'underline hover:cursor-pointer hover:text-text '} href={props.href}>
       {props.children}
     </Link>
   )

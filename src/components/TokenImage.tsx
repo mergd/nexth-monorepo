@@ -1,0 +1,31 @@
+'use client'
+import Image from 'next/image'
+import { useState, useEffect } from 'react'
+type ImageProps = {
+  src: string
+  alt: string
+  width: number
+  height: number
+  fallback?: string
+}
+
+export default function ImageFallback(props: ImageProps) {
+  const [imgSrc, setImgSrc] = useState(props.src)
+
+  const fallback = props.fallback || '/icons/eth-icon.png'
+  return (
+    <div>
+      <Image
+        src={imgSrc}
+        alt={props.alt}
+        width={props.width}
+        height={props.height}
+        layout='fill'
+        objectFit='contain'
+        onError={(e) => {
+          setImgSrc(fallback)
+        }}
+      />
+    </div>
+  )
+}
