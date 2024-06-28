@@ -3,7 +3,7 @@ import { PropsWithChildren } from 'react'
 import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
 import { Layout } from '@/components/Layout'
 import { Web3Provider } from '@/context/Web3'
-
+import { JotaiProvider } from '@/context/Jotai'
 import { cookieToInitialState } from 'wagmi'
 import { WALLETCONNECT_CONFIG } from '@/utils/web3'
 import { headers } from 'next/headers'
@@ -62,9 +62,11 @@ export default function RootLayout(props: PropsWithChildren) {
       </head>
 
       <body>
-        <Web3Provider initialState={initialState}>
-          <Layout>{props.children}</Layout>
-        </Web3Provider>
+        <JotaiProvider>
+          <Web3Provider initialState={initialState}>
+            <Layout>{props.children}</Layout>
+          </Web3Provider>
+        </JotaiProvider>
         <Toaster />
       </body>
     </html>

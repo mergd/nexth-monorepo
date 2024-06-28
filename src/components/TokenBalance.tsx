@@ -39,11 +39,11 @@ export const TokenBalance = ({ address, tokenAddress, toFixed, onBalanceChange, 
   if (!ETHBalance.data && !tokenBalance.data) return null
   if (tokenAddress && tokenBalance.data) {
     return (
-      <div className={`stat-value text-lg w-[150px] ${className}`}>{formatBalance(tokenBalance.data, toFixed)}</div>
+      <div className={`stat-value w-[150px] text-lg ${className}`}>{formatBalance(tokenBalance.data, toFixed)}</div>
     )
   }
   return (
-    <div className={`stat-value text-lg w-[150px] ${className}`}>
+    <div className={`stat-value w-[150px] text-lg ${className}`}>
       {formatBalance(ETHBalance.data?.value ?? BigInt(0), toFixed)}
     </div>
   )
