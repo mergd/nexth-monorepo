@@ -1,6 +1,6 @@
 import { SITE_EMOJI, SITE_INFO, SOCIAL_GITHUB, SOCIAL_TWITTER } from '@/utils/site'
 import { FaGithub, FaXTwitter } from 'react-icons/fa6'
-import { LinkComponent } from './LinkComponent'
+import LinkComponent from './LinkComponent'
 
 export function Footer() {
   return (

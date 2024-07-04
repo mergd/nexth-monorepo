@@ -7,6 +7,3 @@ export const JotaiProvider = (props: { children: ReactNode }) => {
   return <Provider>{props.children}</Provider>
 }
 
-export const testAtom = atom({
-  hello: 'world',
-})

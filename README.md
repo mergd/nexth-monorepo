@@ -1,6 +1,8 @@
 # Nexth
 
-A Next.js + Ethereum starter kit to quickly ship Web3 Apps ⚡
+A Next.js + Ethereum starter kit to quickly ship production-ready Web3 Apps ⚡
+
+No cruft – just stuff to help you ship.
 
 ## Features ✅
 
@@ -9,8 +11,6 @@ A Next.js + Ethereum starter kit to quickly ship Web3 Apps ⚡
 - [wagmi](https://wagmi.sh/)
 - [Web3Modal from WalletConnect](https://docs.walletconnect.com/)
 - [Sign-In with Ethereum](https://www.login.xyz/)
-- [Hardhat](https://hardhat.org/)
-- [DaisyUI](https://chakra-ui.com/)
 
 ## Developer Experience 🧰
 
@@ -19,6 +19,4 @@ A Next.js + Ethereum starter kit to quickly ship Web3 Apps ⚡
 - [prettier](https://prettier.io/)
 - [Husky](https://typicode.github.io/husky/)
 
-### Smart Contracts
 
-If you want to add smart contracts to your project, check out the docs at [hardhat folder](./hardhat) or [foundry folder](./foundry).

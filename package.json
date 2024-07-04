@@ -32,6 +32,7 @@
     "@web3modal/wagmi": "^5.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "date-fns": "^3.6.0",
     "dayjs": "^1.11.10",
     "i18next": "^23.11.5",
     "iron-session": "^6.3.1",

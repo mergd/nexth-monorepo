@@ -18,7 +18,6 @@ export const WALLETCONNECT_CONFIG = defaultWagmiConfig({
     icons: [],
   },
   ssr: true,
-  enableEmail: true,
   storage: createStorage({
     storage: cookieStorage,
   }),

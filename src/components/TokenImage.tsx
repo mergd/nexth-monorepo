@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 type ImageProps = {
   src: string
   alt: string
@@ -16,6 +16,7 @@ export default function ImageFallback(props: ImageProps) {
   return (
     <div>
       <Image
+        key={props.src}
         src={imgSrc}
         alt={props.alt}
         width={props.width}
