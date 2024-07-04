@@ -1,5 +1,4 @@
-import { mainnet, arbitrum, base, linea, polygon, optimism, scroll } from 'viem/chains'
-import { Chain, hardhat, sepolia } from 'viem/chains'
+import { arbitrum, base, Chain, hardhat, linea, mainnet, optimism, polygon, scroll, sepolia } from 'viem/chains'
 
 let chains = [mainnet, arbitrum, base, linea, polygon, optimism, scroll] as [Chain, ...Chain[]]
 

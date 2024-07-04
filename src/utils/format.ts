@@ -1,5 +1,5 @@
-import { formatDistanceToNow, format } from 'date-fns'
-import { Address, Chain } from 'viem'
+import { format, formatDistanceToNow } from 'date-fns'
+import { Chain } from 'viem'
 
 export function TruncateMiddle(text: string, length: number = 5) {
   if (text?.length > length * 2 + 1) {

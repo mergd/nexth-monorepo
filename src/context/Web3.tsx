@@ -1,10 +1,10 @@
 'use client'
 
-import { createWeb3Modal } from '@web3modal/wagmi/react'
+import { WALLETCONNECT_CONFIG, WALLETCONNECT_PROJECT_ID } from '@/utils/web3'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+import { createWeb3Modal } from '@web3modal/wagmi/react'
 import { PropsWithChildren } from 'react'
 import { State, WagmiProvider } from 'wagmi'
-import { WALLETCONNECT_CONFIG, WALLETCONNECT_PROJECT_ID } from '@/utils/web3'
 
 interface Props extends PropsWithChildren {
   initialState?: State
