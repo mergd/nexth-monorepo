@@ -1,5 +1,7 @@
 # Nexth
 
+Quickly install ShadCN components with `pnpm shadcn $component`
+
 A Next.js + Ethereum starter kit to quickly ship production-ready Web3 Apps ⚡
 
 No cruft – just stuff to help you ship.
@@ -18,5 +20,3 @@ No cruft – just stuff to help you ship.
 - [eslint](https://eslint.org/)
 - [prettier](https://prettier.io/)
 - [Husky](https://typicode.github.io/husky/)
-
-

@@ -1,14 +1,15 @@
-import type { Metadata, Viewport } from 'next'
-import { PropsWithChildren } from 'react'
-import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
 import { Layout } from '@/components/Layout'
-import { Web3Provider } from '@/context/Web3'
-import { JotaiProvider } from '@/context/Jotai'
-import { cookieToInitialState } from 'wagmi'
-import { WALLETCONNECT_CONFIG } from '@/utils/web3'
-import { headers } from 'next/headers'
-import '../assets/globals.css'
 import { Toaster } from '@/components/ui/toaster'
+import { JotaiProvider } from '@/context/Jotai'
+import { ThemeProvider } from '@/context/ThemeProvider'
+import { Web3Provider } from '@/context/Web3'
+import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
+import { WALLETCONNECT_CONFIG } from '@/utils/web3'
+import type { Metadata, Viewport } from 'next'
+import { headers } from 'next/headers'
+import { PropsWithChildren } from 'react'
+import { cookieToInitialState } from 'wagmi'
+import '../assets/globals.css'
 
 export const metadata: Metadata = {
   applicationName: SITE_NAME,
@@ -53,7 +54,7 @@ export default function RootLayout(props: PropsWithChildren) {
   const initialState = cookieToInitialState(WALLETCONNECT_CONFIG, headers().get('cookie'))
 
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <head>
         <link
           rel='icon'
@@ -62,12 +63,14 @@ export default function RootLayout(props: PropsWithChildren) {
       </head>
 
       <body>
-        <JotaiProvider>
-          <Web3Provider initialState={initialState}>
-            <Layout>{props.children}</Layout>
-          </Web3Provider>
-        </JotaiProvider>
-        <Toaster />
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
+          <JotaiProvider>
+            <Web3Provider initialState={initialState}>
+              <Layout>{props.children}</Layout>
+            </Web3Provider>
+          </JotaiProvider>
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   )

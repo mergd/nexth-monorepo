@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint --fix",
     "prettier": "prettier './src' --write",
-    "wagmi": "wagmi generate"
+    "wagmi": "wagmi generate",
+    "shadcn": "pnpm dlx shadcn-ui@latest add"
   },
   "husky": {
     "hooks": {
@@ -39,6 +40,7 @@
     "jotai": "^2.8.4",
     "lucide-react": "^0.383.0",
     "next": "^14.2.4",
+    "next-themes": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-i18next": "^14.1.2",
