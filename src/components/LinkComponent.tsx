@@ -7,13 +7,18 @@ type LinkCProps = {
   className?: string
   linkText?: string
   children?: ReactNode
+  isUnderlined?: boolean
 }
 
 export default function LinkComponent(props: LinkCProps) {
   if (props.isExternal) {
     return (
       <Link
-        className={cn('underline underline-offset-1 hover:text-primary/80', props.className)}
+        className={cn(
+          'hover:text-primary/80',
+          props.className,
+          props.isUnderlined ? 'underline underline-offset-1' : ''
+        )}
         href={props.href}
         target='_blank'
         rel='noopener noreferrer'>
@@ -22,7 +27,9 @@ export default function LinkComponent(props: LinkCProps) {
     )
   }
   return (
-    <Link className={cn('underline hover:text-primary/70', props.className)} href={props.href}>
+    <Link
+      className={cn('hover:text-primary/70', props.className, props.isUnderlined ? 'underline underline-offset-1' : '')}
+      href={props.href}>
       {props.children ?? props.linkText ?? props.href}
     </Link>
   )
