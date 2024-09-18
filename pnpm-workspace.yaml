@@ -1,0 +1,6 @@
+name:  '@repo/monorepo'
+private: true
+packages:
+- ./app/*
+
+catalog:

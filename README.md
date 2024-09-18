@@ -1,22 +1,15 @@
-# Nexth
+# Nexth Monolith
 
-Quickly install ShadCN components with `pnpm shadcn $component`
+This is a monolith-style repository for the Nexth project. The main application code is located in the `app` directory.
 
-A Next.js + Ethereum starter kit to quickly ship production-ready Web3 Apps ⚡
+## Structure
 
-No cruft – just stuff to help you ship.
+- `app/`: Contains the main application code
+- `README.md`: This file
 
-## Features ✅
+## Getting Started
 
-- [Next.js](https://nextjs.org/docs)
-- [viem](https://viem.sh/)
-- [wagmi](https://wagmi.sh/)
-- [Web3Modal from WalletConnect](https://docs.walletconnect.com/)
-- [Sign-In with Ethereum](https://www.login.xyz/)
+1. Navigate to the `app` directory
+2. Follow the instructions in the app's README.md file
 
-## Developer Experience 🧰
-
-- [TypeScript](https://www.typescriptlang.org/)
-- [eslint](https://eslint.org/)
-- [prettier](https://prettier.io/)
-- [Husky](https://typicode.github.io/husky/)
+For more information, please refer to the documentation within the `app` directory.
