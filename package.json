@@ -2,12 +2,12 @@
   "name": "@repo/monorepo",
   "private": true,
   "scripts": {
-    "web": "pnpm --filter web"
-    
+    "web": "pnpm --filter web",
+    "api": "pnpm --filter api"
   },
   "workspaces": [
     "app",
     "packages/*"
   ],
-  "packageManager": "pnpm@9.10.0"
+  "packageManager": "pnpm@9.12.1"
 }
