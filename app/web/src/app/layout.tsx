@@ -50,8 +50,8 @@ export const viewport: Viewport = {
   themeColor: '#000000',
 }
 
-export default function RootLayout(props: PropsWithChildren) {
-  const initialState = cookieToInitialState(WALLETCONNECT_CONFIG, headers().get('cookie'))
+export default async function RootLayout(props: PropsWithChildren) {
+  const initialState = cookieToInitialState(WALLETCONNECT_CONFIG, (await headers()).get('cookie'))
 
   return (
     <html lang='en' suppressHydrationWarning>

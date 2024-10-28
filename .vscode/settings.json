@@ -1,0 +1,19 @@
+{
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.next": true,
+    "**/.turbo": true,
+    "**/coverage": true,
+    "**/.git": true,
+    "**/tmp": true,
+    "**/.pnpm": true,
+    "**/out": true,
+    "**/.cache": true,
+    "**/.vercel": true,
+    "**/*.tsbuildinfo": true,
+    "**/.husky": true
+    // "**/contracts/lib": true
+  }
+}

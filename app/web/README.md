@@ -11,8 +11,7 @@ No cruft – just stuff to help you ship.
 - [Next.js](https://nextjs.org/docs)
 - [viem](https://viem.sh/)
 - [wagmi](https://wagmi.sh/)
-- [Web3Modal from WalletConnect](https://docs.walletconnect.com/)
-- [Sign-In with Ethereum](https://www.login.xyz/)
+- [ConnectKit](https://docs.family.co/connectkit)
 
 ## Developer Experience 🧰
 
