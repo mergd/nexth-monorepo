@@ -1,0 +1,40 @@
+version: 2
+updates:
+  # Frontend dependencies
+  - package-ecosystem: "npm"
+    directory: "/app/web"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "automerge"
+    allow:
+      - dependency-type: "direct"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    versioning-strategy: increase
+    open-pull-requests-limit: 10
+    ignore:
+      - dependency-name: "react"
+        versions: ["19.x"]
+      - dependency-name: "react-dom"
+        versions: ["19.x"]
+
+  # API dependencies
+  - package-ecosystem: "npm"
+    directory: "/app/api"
+    schedule:
+      interval: "weekly"
+    labels:
+      - "dependencies"
+      - "automerge"
+    allow:
+      - dependency-type: "direct"
+    groups:
+      dependencies:
+        patterns:
+          - "*"
+    versioning-strategy: increase
+    open-pull-requests-limit: 10
