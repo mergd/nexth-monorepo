@@ -5,10 +5,6 @@
     "web": "pnpm --filter web",
     "api": "pnpm --filter api"
   },
-  "workspaces": [
-    "app",
-    "packages/*"
-  ],
   "packageManager": "pnpm@9.12.3",
   "pnpm": {
     "overrides": {
