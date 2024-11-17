@@ -1,7 +1,7 @@
 import { SITE_EMOJI } from '@/utils/site'
-import { ConnectButton } from './Connect'
-import LinkComponent from './LinkComponent'
-import { ThemeToggle } from './ThemeToggle'
+import { ConnectButton } from './connect'
+import LinkComponent from './link-component'
+import { ThemeToggle } from './theme-toggle'
 
 export function Header() {
   return (
