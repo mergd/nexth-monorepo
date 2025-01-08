@@ -3,6 +3,8 @@ import { Providers } from '@/context/providers'
 import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
 import type { Metadata, Viewport } from 'next'
 import { PropsWithChildren } from 'react'
+import { Theme } from '@radix-ui/themes'
+import '@radix-ui/themes/styles.css'
 import '../assets/globals.css'
 
 export const metadata: Metadata = {
@@ -45,7 +47,6 @@ export const viewport: Viewport = {
 }
 
 export default async function RootLayout(props: PropsWithChildren) {
-
   return (
     <html lang='en' suppressHydrationWarning>
       <head>
@@ -57,7 +58,9 @@ export default async function RootLayout(props: PropsWithChildren) {
 
       <body>
         <Providers>
-              <Layout>{props.children}</Layout>
+          <Theme scaling='95%' grayColor='sage'>
+            <Layout>{props.children}</Layout>
+          </Theme>
         </Providers>
       </body>
     </html>
