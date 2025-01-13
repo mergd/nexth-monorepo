@@ -65,8 +65,11 @@
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
     "@wagmi/cli": "^2.1.22",
     "autoprefixer": "^10.4.20",
-    "eslint": "^9.18.0",
-    "eslint-config-next": "15.1.4",
+    "@next/eslint-plugin-next": "^15.1.4",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-next": "^15.1.4",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.7",
@@ -75,7 +78,8 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.9",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^7.0.0"
   },
   "packageManager": "pnpm@9.15.3"
 }
