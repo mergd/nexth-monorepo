@@ -1,30 +1,35 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import * as TooltipPrimitive from "@radix-ui/react-tooltip"
+import {
+  Tooltip as RadixTooltip,
+  TooltipProps as RadixTooltipProps,
+} from "@radix-ui/themes";
+import * as React from "react";
 
-import { cn } from "@/lib/utils"
 
-const TooltipProvider = TooltipPrimitive.Provider
+interface TooltipProps extends RadixTooltipProps {
+  children: React.ReactNode;
+}
 
-const Tooltip = TooltipPrimitive.Root
+const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
+  ({ children, content, ...props }, ref) => (
+    <RadixTooltip ref={ref} content={content} {...props}>
+      {children}
+    </RadixTooltip>
+  ),
+);
+Tooltip.displayName = "Tooltip";
 
-const TooltipTrigger = TooltipPrimitive.Trigger
+// For backwards compatibility - these just pass through to Radix Themes components
+/** @deprecated */
+const TooltipProvider = ({ children }: { children: React.ReactNode }) =>
+  children;
+/** @deprecated */
+const TooltipTrigger = ({ children }: { children: React.ReactNode }) =>
+  children;
+/** @deprecated */
+const TooltipContent = ({ children }: { children: React.ReactNode }) =>
+  children;
 
-const TooltipContent = React.forwardRef<
-  React.ElementRef<typeof TooltipPrimitive.Content>,
-  React.ComponentPropsWithoutRef<typeof TooltipPrimitive.Content>
->(({ className, sideOffset = 4, ...props }, ref) => (
-  <TooltipPrimitive.Content
-    ref={ref}
-    sideOffset={sideOffset}
-    className={cn(
-      "z-50 overflow-hidden rounded-md bg-primary px-3 py-1.5 text-xs text-primary-foreground animate-in fade-in-0 zoom-in-95 data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=closed]:zoom-out-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
-      className
-    )}
-    {...props}
-  />
-))
-TooltipContent.displayName = TooltipPrimitive.Content.displayName
+export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };
 
-export { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider }

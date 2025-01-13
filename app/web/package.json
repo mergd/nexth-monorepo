@@ -10,7 +10,8 @@
     "lint": "next lint --fix",
     "prettier": "prettier './src' --write",
     "wagmi": "wagmi generate",
-    "shadcn": "pnpm dlx shadcn-ui@latest add"
+    "shadcn": "pnpm dlx shadcn-ui@latest add",
+    "radixcn": "REGISTRY_URL=https://ui.fldr.zip/r pnpm dlx shadcn@latest add"
   },
   "husky": {
     "hooks": {
@@ -47,6 +48,7 @@
     "react-icons": "^5.4.0",
     "react-toastify": "^11.0.2",
     "siwe": "^2.3.2",
+    "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-radix": "^3.0.5",
