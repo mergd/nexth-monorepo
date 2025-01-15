@@ -1,4 +1,6 @@
 import type { Config } from 'tailwindcss'
+import tailwindcssAnimate from 'tailwindcss-animate'
+import tailwindcssRadix from 'tailwindcss-radix'
 
 const config = {
   darkMode: ['class'],
@@ -67,21 +69,14 @@ const config = {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      fontFamily: {
+        display: ['var(--font-source-serif-4)', 'serif'],
+        mono: ['var(--font-jet-brains-mono)', 'monospace'],
+        inter: ['var(--font-inter)'],
+      },
     },
   },
-  plugins: [require('tailwindcss-animate'), require('tailwindcss-radix')()],
+  plugins: [tailwindcssAnimate, tailwindcssRadix],
 } satisfies Config
-
-function generateScale(name) {
-  let scale = Array.from({ length: 12 }, (_, i) => {
-    let id = i + 1
-    return [
-      [id, `var(--${name}-${id})`],
-      [`a${id}`, `var(--${name}-a${id})`],
-    ]
-  }).flat()
-
-  return Object.fromEntries(scale)
-}
 
 export default config

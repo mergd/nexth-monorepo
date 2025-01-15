@@ -1,10 +1,11 @@
 import { Layout } from '@/components/layout'
 import { Providers } from '@/context/providers'
 import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
-import '../assets/globals.css'
 import '@radix-ui/themes/styles.css'
 import type { Metadata, Viewport } from 'next'
 import { PropsWithChildren } from 'react'
+import { fonts } from '../assets/fonts'
+import '../assets/globals.css'
 
 export const metadata: Metadata = {
   applicationName: SITE_NAME,
@@ -47,7 +48,7 @@ export const viewport: Viewport = {
 
 export default async function RootLayout(props: PropsWithChildren) {
   return (
-    <html lang='en' suppressHydrationWarning>
+    <html lang='en' suppressHydrationWarning className={fonts}>
       <head>
         <link
           rel='icon'
