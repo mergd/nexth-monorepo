@@ -1,11 +1,10 @@
 import { Layout } from '@/components/layout'
 import { Providers } from '@/context/providers'
 import { SITE_DESCRIPTION, SITE_EMOJI, SITE_INFO, SITE_NAME, SITE_URL, SOCIAL_TWITTER } from '@/utils/site'
+import '../assets/globals.css'
+import '@radix-ui/themes/styles.css'
 import type { Metadata, Viewport } from 'next'
 import { PropsWithChildren } from 'react'
-import { Theme } from '@radix-ui/themes'
-import '@radix-ui/themes/styles.css'
-import '../assets/globals.css'
 
 export const metadata: Metadata = {
   applicationName: SITE_NAME,
@@ -58,9 +57,7 @@ export default async function RootLayout(props: PropsWithChildren) {
 
       <body>
         <Providers>
-          <Theme scaling='95%' grayColor='sage'>
-            <Layout>{props.children}</Layout>
-          </Theme>
+          <Layout>{props.children}</Layout>
         </Providers>
       </body>
     </html>

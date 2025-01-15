@@ -14,46 +14,43 @@ const config = {
     },
     extend: {
       colors: {
-        gray: generateScale('gray'),
-        custom: generateScale('custom'),
-
-        border: 'hsl(var(--gray-a6))',
-        input: 'hsl(var(--gray-a6))',
-        ring: 'hsl(var(--gray-a6))',
-        background: 'hsl(var(--gray-a1))',
-        foreground: 'hsl(var(--gray-a12))',
+        border: 'var(--gray-6)',
+        input: 'var(--gray-6)',
+        ring: 'var(--gray-8)',
+        background: 'var(--color-background)',
+        foreground: 'var(--gray-12)',
         primary: {
-          DEFAULT: 'hsl(var(--gray-a2))',
-          foreground: 'hsl(var(--gray-a12))',
+          DEFAULT: 'var(--custom-9)',
+          foreground: 'var(--custom-contrast)',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'var(--gray-4)',
+          foreground: 'var(--gray-12)',
         },
         destructive: {
-          DEFAULT: 'hsl(var(--destructive))',
-          foreground: 'hsl(var(--destructive-foreground))',
+          DEFAULT: 'hsl(0 62.8% 30.6%)',
+          foreground: 'var(--gray-1)',
         },
         muted: {
-          DEFAULT: 'hsl(var(--gray-a5))',
-          foreground: 'hsl(var(--muted-gray-a10))',
+          DEFAULT: 'var(--gray-3)',
+          foreground: 'var(--gray-11)',
         },
         accent: {
-          DEFAULT: 'hsl(var(--custom-a2))',
-          foreground: 'hsl(var(--custom-a12))',
+          DEFAULT: 'var(--custom-3)',
+          foreground: 'var(--custom-11)',
         },
         popover: {
-          DEFAULT: 'hsl(var(--gray-a3))',
-          foreground: 'hsl(var(--gray-a11))',
+          DEFAULT: 'var(--custom-surface)',
+          foreground: 'var(--gray-12)',
         },
         card: {
-          DEFAULT: 'hsl(var(--gray-a2))',
-          foreground: 'hsl(var(--gray-a12))',
+          DEFAULT: 'var(--custom-surface)',
+          foreground: 'var(--gray-12)',
         },
       },
       borderRadius: {
-        lg: 'var(--radius)',
-        md: 'calc(var(--radius) - 2px)',
+        lg: `var(--radius)`,
+        md: `calc(var(--radius) - 2px)`,
         sm: 'calc(var(--radius) - 4px)',
       },
       keyframes: {

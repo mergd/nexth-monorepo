@@ -118,6 +118,12 @@ importers:
       '@radix-ui/colors':
         specifier: ^3.0.0
         version: 3.0.0
+      '@radix-ui/react-dropdown-menu':
+        specifier: ^2.1.4
+        version: 2.1.4(react-dom@19.0.0-rc.1(react@19.0.0-rc.1))(react@19.0.0-rc.1)(types-react-dom@19.0.0-rc.1)(types-react@19.0.0-rc.1)
+      '@radix-ui/react-icons':
+        specifier: ^1.3.2
+        version: 1.3.2(react@19.0.0-rc.1)
       '@radix-ui/react-slot':
         specifier: ^1.1.1
         version: 1.1.1(react@19.0.0-rc.1)(types-react@19.0.0-rc.1)
@@ -1927,6 +1933,11 @@ packages:
         optional: true
       '@types/react-dom':
         optional: true
+
+  '@radix-ui/react-icons@1.3.2':
+    resolution: {integrity: sha512-fyQIhGDhzfc9pK2kH6Pl9c4BDJGfMkPqkyIgYDthyNYoNg3wVhoJMMh19WS4Up/1KMPFVpNsT2q3WmXn2N1m6g==}
+    peerDependencies:
+      react: ^16.x || ^17.x || ^18.x || ^19.0.0 || ^19.0.0-rc
 
   '@radix-ui/react-id@1.1.0':
     resolution: {integrity: sha512-EJUrI8yYh7WOjNOqpoJaf1jlFIH2LvtgAl+YcFqNCa+4hj64ZXmPkAKOFs/ukjz3byN6bdb/AVUqHkI8/uWWMA==}
@@ -9480,6 +9491,10 @@ snapshots:
     optionalDependencies:
       '@types/react': types-react@19.0.0-rc.1
       '@types/react-dom': types-react-dom@19.0.0-rc.1
+
+  '@radix-ui/react-icons@1.3.2(react@19.0.0-rc.1)':
+    dependencies:
+      react: 19.0.0-rc.1
 
   '@radix-ui/react-id@1.1.0(react@19.0.0-rc.1)(types-react@19.0.0-rc.1)':
     dependencies:
