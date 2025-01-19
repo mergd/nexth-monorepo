@@ -20,4 +20,11 @@ const jetBrainsMono = JetBrains_Mono({
   variable: '--font-jet-brains-mono',
 })
 
+export const chakraFonts = {
+  heading: { value: inter.style.fontFamily },
+  body: { value: inter.style.fontFamily },
+  mono: { value: jetBrainsMono.style.fontFamily },
+  serif: { value: sourceSerif4.style.fontFamily },
+}
+
 export const fonts = cn(jetBrainsMono.variable, sourceSerif4.variable, inter.variable, 'font-sans antialiased')

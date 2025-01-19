@@ -1,12 +1,14 @@
+import { Button } from '@/components/ui/button'
 import { SITE_DESCRIPTION, SITE_NAME } from '@/utils/site'
-
 export default function Home() {
   return (
     <>
-      <h2 className='font-display mb-2 text-2xl'>{SITE_NAME}</h2>
+      <h2 className='mb-2 font-display text-2xl'>{SITE_NAME}</h2>
       <p>{SITE_DESCRIPTION}</p>
 
-      <div className='font-mono'>Hello</div>
+      <Button variant={'solid'} size={'sm'} className='font-mono'>
+        Hello
+      </Button>
     </>
   )
 }

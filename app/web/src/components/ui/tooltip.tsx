@@ -1,35 +1,46 @@
-"use client";
+import { Tooltip as ChakraTooltip, Portal } from "@chakra-ui/react"
+import * as React from "react"
 
-import {
-  Tooltip as RadixTooltip,
-  TooltipProps as RadixTooltipProps,
-} from "@radix-ui/themes";
-import * as React from "react";
-
-
-interface TooltipProps extends RadixTooltipProps {
-  children: React.ReactNode;
+export interface TooltipProps extends ChakraTooltip.RootProps {
+  showArrow?: boolean
+  portalled?: boolean
+  portalRef?: React.RefObject<HTMLElement>
+  content: React.ReactNode
+  contentProps?: ChakraTooltip.ContentProps
+  disabled?: boolean
 }
 
-const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
-  ({ children, content, ...props }, ref) => (
-    <RadixTooltip ref={ref} content={content} {...props}>
-      {children}
-    </RadixTooltip>
-  ),
-);
-Tooltip.displayName = "Tooltip";
+export const Tooltip = React.forwardRef<HTMLDivElement, TooltipProps>(
+  function Tooltip(props, ref) {
+    const {
+      showArrow,
+      children,
+      disabled,
+      portalled = true,
+      content,
+      contentProps,
+      portalRef,
+      ...rest
+    } = props
 
-// For backwards compatibility - these just pass through to Radix Themes components
-/** @deprecated */
-const TooltipProvider = ({ children }: { children: React.ReactNode }) =>
-  children;
-/** @deprecated */
-const TooltipTrigger = ({ children }: { children: React.ReactNode }) =>
-  children;
-/** @deprecated */
-const TooltipContent = ({ children }: { children: React.ReactNode }) =>
-  children;
+    if (disabled) return children
 
-export { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger };
-
+    return (
+      <ChakraTooltip.Root {...rest}>
+        <ChakraTooltip.Trigger asChild>{children}</ChakraTooltip.Trigger>
+        <Portal disabled={!portalled} container={portalRef}>
+          <ChakraTooltip.Positioner>
+            <ChakraTooltip.Content ref={ref} {...contentProps}>
+              {showArrow && (
+                <ChakraTooltip.Arrow>
+                  <ChakraTooltip.ArrowTip />
+                </ChakraTooltip.Arrow>
+              )}
+              {content}
+            </ChakraTooltip.Content>
+          </ChakraTooltip.Positioner>
+        </Portal>
+      </ChakraTooltip.Root>
+    )
+  },
+)

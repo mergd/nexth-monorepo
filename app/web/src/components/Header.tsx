@@ -1,7 +1,7 @@
 import { SITE_EMOJI } from '@/utils/site'
 import { ConnectButton } from './connect'
 import LinkComponent from './link-component'
-import { ThemeToggle } from './theme-toggle'
+import { ColorModeButton } from './ui/color-mode'
 
 export function Header() {
   return (
@@ -11,7 +11,7 @@ export function Header() {
       </LinkComponent>
 
       <div className='flex gap-2'>
-        <ThemeToggle />
+        <ColorModeButton />
         <ConnectButton />
       </div>
     </header>
