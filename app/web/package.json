@@ -38,7 +38,7 @@
     "connectkit": "^1.9.1",
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.19",
-    "i18next": "^25.7.3",
+    "i18next": "^25.7.4",
     "jotai": "^2.16.1",
     "lucide-react": "^0.562.0",
     "next": "16.1.1",
@@ -46,7 +46,7 @@
     "react": "19.0.0-rc.1",
     "react-currency-input-field": "^4.0.3",
     "react-dom": "19.0.0-rc.1",
-    "react-i18next": "^16.5.1",
+    "react-i18next": "^16.5.2",
     "react-icons": "^5.5.0",
     "react-toastify": "^11.0.5",
     "siwe": "^3.0.0",
@@ -54,20 +54,20 @@
     "tailwind-merge": "^3.4.0",
     "tailwindcss-animate": "^1.0.7",
     "tailwindcss-radix": "^4.0.2",
-    "turbo": "^2.7.2",
-    "viem": "^2.43.5",
-    "wagmi": "^3.1.4",
+    "turbo": "^2.7.4",
+    "viem": "^2.44.1",
+    "wagmi": "^3.3.1",
     "zod": "^4.3.5"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^16.1.1",
     "@tailwindcss/typography": "^0.5.19",
     "@tsconfig/next": "^2.0.5",
-    "@types/node": "^25.0.3",
+    "@types/node": "^25.0.6",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",
-    "@typescript-eslint/eslint-plugin": "^8.51.0",
-    "@typescript-eslint/parser": "^8.51.0",
+    "@typescript-eslint/eslint-plugin": "^8.52.0",
+    "@typescript-eslint/parser": "^8.52.0",
     "@wagmi/cli": "^2.8.0",
     "autoprefixer": "^10.4.23",
     "eslint": "^9.39.2",
@@ -81,7 +81,7 @@
     "prettier-plugin-tailwindcss": "^0.7.2",
     "tailwindcss": "^4.1.18",
     "typescript": "^5.9.3",
-    "typescript-eslint": "^8.51.0"
+    "typescript-eslint": "^8.52.0"
   },
   "packageManager": "pnpm@9.15.3"
 }
